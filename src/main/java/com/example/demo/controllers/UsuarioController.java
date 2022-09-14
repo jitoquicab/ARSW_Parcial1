@@ -26,7 +26,7 @@ public class UsuarioController {
         return new GenericResponse<>(HttpStatus.ACCEPTED,"Aceptado",true,usuarioService.obtenerUsuarios());
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.PUT)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public GenericResponse<UsuarioModel> guardarUsuario(@RequestBody UsuarioModel usuario){
         return usuarioService.guardarUsuario(usuario);
     }
