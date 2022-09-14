@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+/*
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,13 +8,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "usuario")
-public class UsuarioModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
+@Entity
+@Table(name = "usuario")*/
+public class UsuarioModel {
+    public UsuarioModel(long id, String nombre, String email, String prioridad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.prioridad = prioridad;
+    }
+
+    /*
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(unique = true, nullable = false)*/
     private long id;
 
     private String nombre;
