@@ -1,11 +1,7 @@
 package com.example.demo.services;
-
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
 import com.example.demo.models.UsuarioModel;
 import com.example.demo.models.Response.GenericResponse;
 import com.example.demo.repositories.UsuarioRespository;

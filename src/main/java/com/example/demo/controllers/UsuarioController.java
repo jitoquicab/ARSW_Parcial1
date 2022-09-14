@@ -1,7 +1,4 @@
 package com.example.demo.controllers;
-
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +21,7 @@ public class UsuarioController {
         return usuarioService.obtenerUsuarios();
     }
 
+    @RequestMapping(value = "guardarUsuario", method = RequestMethod.POST)
     public GenericResponse<UsuarioModel> guardarUsuario(@RequestBody UsuarioModel usuario){
         return usuarioService.guardarUsuario(usuario);
     }
