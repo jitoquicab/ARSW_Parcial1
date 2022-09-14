@@ -21,11 +21,25 @@ public class UsuarioController {
     @Autowired
     UsuarioService usuarioService;
 
+    /**
+     * Metodo que nos retorna todos los usuarios
+     * @return json con los usuarios
+     */
     @RequestMapping(method = RequestMethod.GET)
     public GenericResponse<?> obtenerUsuarios(){
         return new GenericResponse<>(HttpStatus.ACCEPTED,"Aceptado",true,usuarioService.obtenerUsuarios());
     }
 
+    /**
+     * Añadir un usuario de la forma {
+     *             "id": 4,
+     *             "nombre": "menganito",
+     *             "email": "usuario3@mail.com",
+     *             "prioridad": "tres"
+     *         }
+     * @param usuario
+     * @return
+     */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public GenericResponse<UsuarioModel> guardarUsuario(@RequestBody UsuarioModel usuario){
         return usuarioService.guardarUsuario(usuario);
