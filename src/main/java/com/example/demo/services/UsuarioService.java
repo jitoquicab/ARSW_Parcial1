@@ -2,6 +2,8 @@ package com.example.demo.services;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -11,12 +13,12 @@ import com.example.demo.repositories.UsuarioRespository;
 
 @Service
 public class UsuarioService {
-    
-    
-    UsuarioRespository usuarioRespository;
 
-    public ArrayList<UsuarioModel> obtenerUsuarios(){
-        return (ArrayList<UsuarioModel>)usuarioRespository.findAll();
+    UsuarioRespository usuarioRespository = null;
+
+
+    public GenericResponse<UsuarioModel> obtenerUsuarios() {
+        return usuarioRespository.findAll();
     }
     
     public GenericResponse<UsuarioModel> guardarUsuario(UsuarioModel usuario){

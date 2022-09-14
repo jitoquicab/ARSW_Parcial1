@@ -1,6 +1,9 @@
 package com.example.demo.models.Response;
 
+import com.example.demo.models.UsuarioModel;
 import org.springframework.http.HttpStatus;
+
+import java.util.ArrayList;
 
 public class GenericResponse<T> {
 
@@ -40,8 +43,8 @@ public class GenericResponse<T> {
     public T getData() {
         return data;
     }
-    public void setData(T data) {
-        this.data = data;
+    public void setData(ArrayList<UsuarioModel> data) {
+        this.data = (T) data;
     }
     
 }
