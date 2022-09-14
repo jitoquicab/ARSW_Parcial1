@@ -1,0 +1,3 @@
+1. fue necesario añadir la anotacion @Autowired a los objetos que estaban siendo inyectados
+2. fue necesario usar la anotacion @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE) para el get y @RequestMapping(method = RequestMethod.POST) para el post
+3. se baso la respuesta que se daba en el guardarUsuario y se hizo un cambio en el metodo obtenerUsuarios() en el Servicio UsuarioService
