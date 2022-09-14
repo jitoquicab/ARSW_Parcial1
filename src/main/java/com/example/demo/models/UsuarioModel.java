@@ -1,25 +1,19 @@
 package com.example.demo.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "usuario")
 public class UsuarioModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
     private long id;
 
     private String nombre;
     private String email;
     private String prioridad;
-    public long getId() {
+    public UsuarioModel(int i, String string, String string2, String string3) {
+		this.id=i;
+		this.nombre=string;
+		this.email=string2;
+		this.prioridad=string3;
+	}
+	public long getId() {
         return id;
     }
     public void setId(long id) {
@@ -43,6 +37,4 @@ public class UsuarioModel {
     public void setPrioridad(String prioridad) {
         this.prioridad = prioridad;
     }
-
-    
 }
