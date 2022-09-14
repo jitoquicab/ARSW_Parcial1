@@ -1,21 +1,14 @@
 package com.example.demo.models;
 
+
+
 public class UsuarioModel {
 
     private long id;
+
     private String nombre;
     private String email;
     private String prioridad;
-
-    public UsuarioModel(){}
-
-    public UsuarioModel(long id, String nombre, String email, String prioridad){
-        this.id = id;
-        this.nombre = nombre;
-        this.email = email;
-        this.prioridad = prioridad;
-    }
-
     public long getId() {
         return id;
     }

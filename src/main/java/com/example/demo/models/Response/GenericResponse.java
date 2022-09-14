@@ -1,21 +1,18 @@
 package com.example.demo.models.Response;
 
 import org.springframework.http.HttpStatus;
-import com.example.demo.models.UsuarioModel;
-import java.util.ArrayList;
-
 
 public class GenericResponse<T> {
 
     private HttpStatus code;
     private String message;
     private boolean state;
-    private ArrayList<UsuarioModel> data;
+    private T data;
 
     public GenericResponse(){
     }
 
-    public GenericResponse(HttpStatus code, String message, boolean state, ArrayList<UsuarioModel> data) {
+    public GenericResponse(HttpStatus code, String message, boolean state, T data) {
         this.code = code;
         this.message = message;
         this.state = state;
@@ -40,10 +37,10 @@ public class GenericResponse<T> {
     public void setState(boolean state) {
         this.state = state;
     }
-    public ArrayList<UsuarioModel> getData() {
+    public T getData() {
         return data;
     }
-    public void setData(ArrayList<UsuarioModel> data) {
+    public void setData(T data) {
         this.data = data;
     }
     
