@@ -1,0 +1,8 @@
+com\example\demo\DemoApplication.class
+com\example\demo\controllers\UsuarioController.class
+com\example\demo\repositories\UsuarioRespository.class
+com\example\demo\models\Response\GenericResponse.class
+com\example\demo\models\UsuarioModel.class
+com\example\demo\repositories\impl\InmemoryPersistence.class
+com\example\demo\services\UsuarioService.class
+com\example\demo\ServletInitializer.class
