@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,11 +22,20 @@ public class UsuarioController {
 
     @RequestMapping(value = "obtenerUsuarios", method = RequestMethod.GET)
     public GenericResponse<UsuarioModel> obtenerUsuarios(){
-        return usuarioService.obtenerUsuarios();
+        try {
+            return usuarioService.obtenerUsuarios();
+        }catch (Exception ex){
+            return new GenericResponse<>(HttpStatus.NOT_FOUND, "No se pudo consultar", false, null);
+        }
     }
 
+    @RequestMapping(value = "agregarusuario", method = RequestMethod.POST)
     public GenericResponse<UsuarioModel> guardarUsuario(@RequestBody UsuarioModel usuario){
-        return usuarioService.guardarUsuario(usuario);
+        try {
+            return usuarioService.guardarUsuario(usuario);
+        }catch(Exception ex){
+            return new GenericResponse<>(HttpStatus.NOT_FOUND, "No se pudo consultar", false, null);
+        }
     }
 
 }       
